@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poll Button</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <button class="btn btn-primary btn-lg btn-block mb-4" id="pollButton" onclick="openModal()">Create
+                    Poll</button>
+                <div id="pollModal" class="modal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Create a Poll</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                    onclick="closeModal()">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="pollForm">
+                                    <div class="form-group">
+                                        <label for="pollQuestion">Poll Question:</label>
+                                        <input type="text" id="pollQuestion" name="pollQuestion" class="form-control"
+                                            required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="option1">Option 1:</label>
+                                        <input type="text" id="option1" name="option1" class="form-control option-input"
+                                            required oninput="addNewOption(this)">
+                                    </div>
+                                    <div id="optionContainer"></div>
+                                    <button type="submit" class="btn btn-success btn-block mt-3" id="createPollButton"
+                                        disabled>Create Poll</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="pollResult" class="poll-result">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
